@@ -1,0 +1,26 @@
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  
+  float: left;
+  padding: 17px;
+} */
+
+.navbar {
+  padding: 10px;
+  position: sticky;
+  box-shadow: 0 8px 6px -6px #999;
+}
+.nav-item {
+  display: inline-block;
+  padding-right: 17px;
+  padding-left: 17px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.item-right {
+  float: right;
+}

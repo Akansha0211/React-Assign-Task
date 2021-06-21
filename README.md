@@ -1,3 +1,5 @@
+### LIVE LINK : https://coding-ninjas-task.web.app
+
 ## PROBLEM STATEMENT
 
 At Coding Ninjas, we have a page to list all the events that are being organised by the Coding Ninjas Team.
@@ -28,3 +30,17 @@ event_sub_category: Filters the events by sub category. Each of the above 5 cate
 tag_list: List of selected tags.
 
 offset: Offsets the events by the given number
+
+## Hosting:
+
+### npm i -g firebase tools
+
+### firebase login
+
+### firebase init
+
+### npm run build
+
+Creates optimised production build.
+
+### firebase deploy

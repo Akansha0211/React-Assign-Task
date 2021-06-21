@@ -8,23 +8,23 @@ import './Events.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-class Events extends Component {
+
+class Webinars extends Component {
     state = { 
         events:[]
      };
 
-     //manage GET requests from API
-     async componentDidMount(){
-         const url = "https://api.codingninjas.com/api/v3/events?event_category=ALL_EVENTS&event_sub_category=Upcoming&tag_list=&offset=0";
-         const response = await axios.get(url);
-         const data = response.data;
-         const datl2 = data.data
-        //  console.log(data);
-         const arr = datl2.events;
-        //  console.log(arr);
-         this.setState({events:arr});
-         console.log(this.state.events);
-     }
+    async componentDidMount(){
+        const url = "https://api.codingninjas.com/api/v3/events?event_category=WEBINAR&event_sub_category=Upcoming&tag_list=&offset=0";
+        const response = await axios.get(url);
+        const data = response.data;
+        const datl2 = data.data
+       //  console.log(data);
+        const arr = datl2.events;
+       //  console.log(arr);
+        this.setState({events:arr});
+        console.log(this.state.events);
+    }
 
     render() { 
         return ( 
@@ -37,30 +37,22 @@ class Events extends Component {
                                 <a> All Events</a>
                             </li>
                         </Link>
-                        <Link to='/webinars'>
-                            <li>
-                                <LiveTvSharpIcon/>
-                                <a>Webinars</a>
-                            </li>
-                        </Link>
-                        <Link to="/coding-events">
-                            <li>
-                                <CodeSharpIcon/>
-                                <a> Coding Events</a>
-                            </li>
-                        </Link>
-                        <Link to='/bootcamps'>
-                            <li>
-                                <AirplaySharpIcon/>
-                                <a>Bootcamps</a>
-                            </li>
-                        </Link>
-                        <Link to='/workshops'>
-                            <li>
-                                <VideocamSharpIcon/>
-                                <a >Workshop</a>
-                            </li>
-                        </Link>
+                        <li>
+                            <LiveTvSharpIcon/>
+                            <a href="webinars">Webinars</a>
+                         </li>
+                        <li>
+                        <CodeSharpIcon/>
+                        <a href="coding-events"> Coding Events</a>
+                        </li>
+                        <li>
+                        <AirplaySharpIcon/>
+                        <a href="bootcamps">Bootcamps</a>
+                        </li>
+                        <li>
+                        <VideocamSharpIcon/>
+                        <a href="workshops">Workshop</a>
+                        </li>
                     </ul>
                 </nav>
                 <nav className="nav2 ml-auto mt-1">
@@ -108,10 +100,10 @@ class Events extends Component {
                             )
                         })}
                     </div>
-                </div>               
+                </div>  
             </div>
          );
     }
 }
  
-export default Events;
+export default Webinars;

@@ -8,24 +8,22 @@ import './Events.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-class Events extends Component {
+
+class Workshops extends Component {
     state = { 
         events:[]
      };
-
-     //manage GET requests from API
      async componentDidMount(){
-         const url = "https://api.codingninjas.com/api/v3/events?event_category=ALL_EVENTS&event_sub_category=Upcoming&tag_list=&offset=0";
-         const response = await axios.get(url);
-         const data = response.data;
-         const datl2 = data.data
-        //  console.log(data);
-         const arr = datl2.events;
-        //  console.log(arr);
-         this.setState({events:arr});
-         console.log(this.state.events);
-     }
-
+        const url = "https://api.codingninjas.com/api/v3/events?event_category=WORKSHOP&event_sub_category=Upcoming&tag_list=&offset=0";
+        const response = await axios.get(url);
+        const data = response.data;
+        const datl2 = data.data
+       //  console.log(data);
+        const arr = datl2.events;
+       //  console.log(arr);
+        this.setState({events:arr});
+        console.log(this.state.events);
+    }
     render() { 
         return ( 
             <div className="events">
@@ -58,7 +56,7 @@ class Events extends Component {
                         <Link to='/workshops'>
                             <li>
                                 <VideocamSharpIcon/>
-                                <a >Workshop</a>
+                                <a>Workshop</a>
                             </li>
                         </Link>
                     </ul>
@@ -78,40 +76,16 @@ class Events extends Component {
                 </nav>
                 <div className="container-fluid mt-4">
                     <div className="row">
-                        {this.state.events.map((event)=>{
-                            const{name,short_desc,registration_start_time,fees,venue,mobile_cover_picture} = event;
-                            return(
-                                <div className="col-12 col-lg-6 mb-4">
-                                    <div className="card">
-                                        <img src={event.mobile_cover_picture} alt="cover-pic"/>
-                                        <div className="card-body">
-                                            <h4 className="card-title">{event.name} </h4>
-                                            <div className="card-text info">
-                                                <div className="card-info-text">
-                                                    <span>Starts on</span>
-                                                    {event.registration_start_time}
-                                                </div>
-                                                <div className="card-info-text">
-                                                    <span>Entry Fee</span>
-                                                    {event.fees}
-                                                </div>
-                                                <div className="card-info-text">
-                                                    <span>Venue</span>
-                                                    {event.venue}
-                                                </div>
-                                            </div>
-                                            <hr></hr>
-                                            <p>{event.short_desc}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
+                        {this.state.events.length === 0 &&(
+                            <div style={{textAlign:'center'}}>
+                                <h3>No Events found</h3>
+                            </div>
+                        )}
                     </div>
-                </div>               
+                </div>   
             </div>
          );
     }
 }
  
-export default Events;
+export default Workshops;

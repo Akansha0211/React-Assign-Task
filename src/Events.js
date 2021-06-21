@@ -65,35 +65,6 @@ class Events extends Component {
                         </li>
                     </ul>
                 </nav>
-                {/* {this.state.events.map((event, index)=>{
-                    const{name,short_desc,registration_start_time,fees,venue,mobile_cover_picture} = event;
-                    return(
-                        <div className="container-fluid mt-4">
-                            <div className="row">
-                                <div className="col-12 col-lg-6 mb-2">
-                                    <div className="card" key={index}>
-                                        <img src={event.mobile_cover_picture} alt="cover-pic"/>
-                                        <div className="card-body">
-                                            <h4 className="card-title">{event.name} </h4>
-                                            <div className="card-text info">
-                                                <div>
-                                                    {event.registration_start_time}
-                                                </div>
-                                                <div>
-                                                    {event.fees}
-                                                </div>
-                                                <div>
-                                                    {event.venue}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })} */}
-
                 <div className="container-fluid mt-4">
                     <div className="row">
                         {this.state.events.map((event)=>{

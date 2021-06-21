@@ -44,11 +44,23 @@ a:hover {
 a:active {
   color: orangered;
 }
-/* @media screen and (max-width: 992px) {
-  .card {
-    width: 50%;
-  }
-} */
-.container {
-  display: grid;
+.info {
+  display: flex;
+  text-align: center;
+}
+.card {
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-info-text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 40px;
+  text-align: center;
+}
+.card-info-text span {
+  font-weight: bold;
+  color: gray;
 }

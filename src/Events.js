@@ -68,87 +68,36 @@ class Events extends Component {
                 <div className="container-fluid mt-4">
                     <div className="row">
                         {this.state.events.map((event)=>{
+                            const{name,short_desc,registration_start_time,fees,venue,mobile_cover_picture} = event;
                             return(
-                                <div className="col-12 col-lg-6 mb-2">
+                                <div className="col-12 col-lg-6 mb-4">
                                     <div className="card">
                                         <img src={event.mobile_cover_picture} alt="cover-pic"/>
                                         <div className="card-body">
                                             <h4 className="card-title">{event.name} </h4>
                                             <div className="card-text info">
-                                                <div>
+                                                <div className="card-info-text">
+                                                    <span>Starts on</span>
                                                     {event.registration_start_time}
                                                 </div>
-                                                <div>
+                                                <div className="card-info-text">
+                                                    <span>Entry Fee</span>
                                                     {event.fees}
                                                 </div>
-                                                <div>
+                                                <div className="card-info-text">
+                                                    <span>Venue</span>
                                                     {event.venue}
                                                 </div>
                                             </div>
+                                            <hr></hr>
+                                            <p>{event.short_desc}</p>
                                         </div>
                                     </div>
                                 </div>
                             )
                         })}
                     </div>
-                </div>
-
-                {/* <div className="container-fluid mt-5">
-                    <div className="row">
-                        <div className="col-12 col-lg-6 mb-2">
-                            <div className="card">
-                                <img alt="cover-pic"></img>
-                                <div className="card-body">
-                                    <h4 className="card-title">name</h4>
-                                    <ul className="info">
-                                        <li>starts on</li>
-                                        <li> entry fee</li>
-                                        <li>venue</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-lg-6 mb-2">
-                            <div className="card">
-                                <img alt="cover-pic"></img>
-                                <div className="card-body">
-                                    <h4 className="card-title">name</h4>
-                                    <ul className="info">
-                                        <li>starts on</li>
-                                        <li> entry fee</li>
-                                        <li>venue</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-lg-6 mb-2">
-                            <div className="card">
-                                <img alt="cover-pic"></img>
-                                <div className="card-body">
-                                    <h4 className="card-title">name</h4>
-                                    <ul className="info">
-                                        <li>starts on</li>
-                                        <li> entry fee</li>
-                                        <li>venue</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-lg-6 mb-2">
-                            <div className="card">
-                                <img alt="cover-pic"></img>
-                                <div className="card-body">
-                                    <h4 className="card-title">name</h4>
-                                    <ul className="info">
-                                        <li>starts on</li>
-                                        <li> entry fee</li>
-                                        <li>venue</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>               */}
+                </div>               
             </div>
          );
     }

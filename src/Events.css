@@ -19,6 +19,7 @@ ul.nav1-content li {
   color: grey;
   text-align: left;
   padding: 15px;
+  padding-right: 35px;
   font-size: 20px;
 }
 .nav2 {
@@ -42,4 +43,12 @@ a:hover {
 }
 a:active {
   color: orangered;
+}
+/* @media screen and (max-width: 992px) {
+  .card {
+    width: 50%;
+  }
+} */
+.container {
+  display: grid;
 }
